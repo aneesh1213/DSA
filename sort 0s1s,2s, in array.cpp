@@ -3,24 +3,39 @@ using namespace std;
  void sort012(int a[], int n)
     {
         // code here 
-    int s=0;
-    int mid=0;
-    int e=n-1;
-    while(mid<=e){
-            if(a[mid]==0){
-                swap(a[mid],a[s]);
-                s++;
-                mid++;
-            }
-            else if(a[mid]==2){
-                 swap(a[mid],a[e]);
-                e--;
-            }
-            else{
-                mid++;
-            }
-         
+	int c0=0,c1=0,c2=0;
+
+         for(int i=0;i<n;i++)
+
+         {
+
+             if(a[i]==0)
+
+             c0++;
+
+             else if(a[i]==1)
+
+             c1++;
+
+             else
+
+             c2++;
+    } 
+    for(int i=0;i<n;i++){
+        if(c0!=0){
+            a[i] = 0;
+            c0--;
         }
+        else if(c1!=0){
+            a[i] = 1;
+            c1--;
+        }
+        else if(c2!=0){
+            a[i] = 2;
+            c2--;
+			
+		}
+	}
      
     }
 int main(){
